@@ -14,7 +14,7 @@ public class IniciarApp implements Task {
     @Override
     @Step("{0} attemps iniciar app e iniciar session")
     public <T extends Actor> void performAs(T actor) {
-       // actor.attemptsTo(WaitApp.initialized());
+       actor.attemptsTo(WaitApp.initialized());
     }
 
 

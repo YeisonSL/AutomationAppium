@@ -31,18 +31,18 @@ public class RegistrarUsuario implements Task {
 	@Override
 	public <T extends Actor> void performAs(T actor) {
 		actor.attemptsTo(
-				//Click.on(BOTON_REGISTRARME),
-				//SendKeys.of(registrarseInfo.get(0).getNombres()).into(CAMPO_NOMBRE),
-				//SendKeys.of(registrarseInfo.get(0).getApellidos()).into(CAMPO_APELLIDO),
+				Click.on(BOTON_REGISTRARME));
+		actor.attemptsTo(Enter.theValue(registrarseInfo.get(0).getNombres()).into(CAMPO_NOMBRE));
+		actor.attemptsTo(Enter.theValue(registrarseInfo.get(0).getApellidos()).into(CAMPO_APELLIDO));
 				//Click.on(CAMPO_CELULAR),
+		actor.attemptsTo(Enter.theValue(registrarseInfo.get(0).getCelular()).into(CAMPO_CELULAR));
 				//SendKeys.of(registrarseInfo.get(0).getCelular()).into(CAMPO_CELULAR),
-				//SendKeys.of(registrarseInfo.get(0).getCelular()).into(CAMPO_CELULAR),
-				WaitFor.seconds(25),
-				SendKeys.of(registrarseInfo.get(0).getCorreo()).into(CAMPO_CORREO),
-				SendKeys.of(registrarseInfo.get(0).getCodigoReferencia()).into(CAMPO_CODIGO_REFERIDO),
-				Click.on(CHECK_TERMINOS_CONDICIONES),
-				Click.on(BOTON_SIGUIENTE),
-				WaitFor.seconds(2));
+				//WaitFor.seconds(25),
+		actor.attemptsTo(Enter.theValue(registrarseInfo.get(0).getCorreo()).into(CAMPO_CORREO));
+		actor.attemptsTo(Enter.theValue(registrarseInfo.get(0).getCodigoReferencia()).into(CAMPO_CODIGO_REFERIDO));
+		actor.attemptsTo(Click.on(CHECK_TERMINOS_CONDICIONES));
+		actor.attemptsTo(Click.on(BOTON_SIGUIENTE));
+		actor.attemptsTo(WaitFor.seconds(2));
 	}
 
 	public static RegistrarUsuario conDatos(List<RegistrarseInfo> registrarseInfo) {
