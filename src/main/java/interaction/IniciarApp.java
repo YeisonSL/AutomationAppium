@@ -2,23 +2,27 @@ package interaction;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.thucydides.core.annotations.Step;
+import net.serenitybdd.screenplay.targets.Target;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-
-import interactionloginactions.*;
 
 
 public class IniciarApp implements Task {
 
+    Target elemento;
+
+    public IniciarApp(Target elemento) {
+        this.elemento = elemento;
+    }
     @Override
-    @Step("{0} attemps iniciar app e iniciar session")
     public <T extends Actor> void performAs(T actor) {
-       actor.attemptsTo(WaitApp.initialized());
+       actor.attemptsTo(
+               EsperarCarga.elemento(elemento)
+               );
     }
 
 
-    public static IniciarApp ok() {
-        return instrumented(IniciarApp.class);
+    public static IniciarApp ok(Target elemento) {
+        return instrumented(IniciarApp.class, elemento);
     }
 }

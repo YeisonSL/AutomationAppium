@@ -7,11 +7,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/feature/Login.feature",
+        features = "src/test/resources/feature/BuscarProducto.feature",
         glue = {"stepdefinitions"},
         snippets = SnippetType.CAMELCASE,
-        tags = "@Login"
+        tags = "@BuscarProducto"
 )
-public class LoginNequiRunner {
+public class BuscarProducto {
 
 }

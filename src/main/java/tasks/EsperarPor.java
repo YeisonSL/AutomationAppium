@@ -1,15 +1,15 @@
-package tasksgeneric;
+package tasks;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class WaitFor implements Task {
+public class EsperarPor implements Task {
 
     private int seconds;
 
-    public WaitFor(int seconds) {
+    public EsperarPor(int seconds) {
         this.seconds = seconds;
     }
 
@@ -23,8 +23,7 @@ public class WaitFor implements Task {
         }
     }
 
-
-    public static WaitFor seconds(int seconds) {
-        return instrumented(WaitFor.class, seconds);
+    public static EsperarPor segundos(int seconds) {
+        return instrumented(EsperarPor.class, seconds);
     }
 }

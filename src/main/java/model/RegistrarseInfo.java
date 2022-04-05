@@ -8,15 +8,17 @@ public class RegistrarseInfo {
     private String correo;
     private String codigoReferencia;
     private String contrasena;
+    private String otpInvalido;
 
 
-    public RegistrarseInfo(String nombres, String apellidos, String celular, String correo, String codigoReferencia, String contrasena) {
+    public RegistrarseInfo(String nombres, String apellidos, String celular, String correo, String codigoReferencia, String contrasena, String otpInvalido) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.celular = celular;
         this.correo = correo;
         this.codigoReferencia = codigoReferencia;
         this.contrasena = contrasena;
+        this.otpInvalido = otpInvalido;
     }
 
     public String getNombres() {
@@ -41,5 +43,9 @@ public class RegistrarseInfo {
 
     public String getContrasena() {
         return contrasena;
+    }
+
+    public String getOtpInvalido() {
+        return otpInvalido;
     }
 }
